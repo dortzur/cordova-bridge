@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.plugin.bridge" version="0.5.0" xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Bridge</name>
+    <js-module name="Bridge" src="www/Bridge.js">
+        <clobbers target="cordova.plugins.Bridge"/>
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="Bridge">
+                <param name="android-package" value="com.plugin.bridge.Bridge"/>
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"/>
+        <source-file src="src/android/Bridge.java" target-dir="src/com/plugin/bridge/Bridge"/>
+    </platform>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="Bridge">
+                <param name="ios-package" value="Bridge"/>
+            </feature>
+        </config-file>
+        <source-file src="src/ios/Bridge.m"/>
+        <source-file src="src/ios/Bridge.h"/>
+    </platform>
+</plugin>
