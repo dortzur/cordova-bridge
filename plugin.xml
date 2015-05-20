@@ -12,7 +12,7 @@
             </feature>
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml"/>
-        <source-file src="src/android/Bridge.java" target-dir="src/com/plugin/bridge/Bridge"/>
+        <source-file src="src/android/Bridge.java" target-dir="src/com/plugin/bridge/"/>
     </platform>
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
