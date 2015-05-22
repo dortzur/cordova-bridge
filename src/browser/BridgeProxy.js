@@ -22,12 +22,18 @@ var browser = require('cordova/platform');
 var cordova = require('cordova');
 
 
+function echo(message) {
+    return message;
+}
 module.exports = {
-    coolMethod: function (message,success, error) {
+    coolMethod: function (success, error, args) {
+        var message = args[0];
+        var echoMessage = echo(message);
         setTimeout(function () {
-            success(message);
+            success(echoMessage);
         }, 0);
     }
 };
+
 
 require("cordova/exec/proxy").add("Bridge", module.exports);
