@@ -32,7 +32,7 @@
             </feature>
         </config-file>
 
-        <js-module src="src/browser/BridgeProxy.js" name="Bridge">
+        <js-module src="src/browser/BridgeProxy.js" name="BridgeProxy">
             <runs />
         </js-module>
     </platform>
