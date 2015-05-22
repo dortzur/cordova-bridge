@@ -3,7 +3,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android">
     <name>Bridge</name>
     <js-module name="Bridge" src="www/Bridge.js">
-        <clobbers target="cordova.plugins.Bridge"/>
+        <clobbers target="cordova.plugins.bridge"/>
     </js-module>
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
@@ -23,4 +23,18 @@
         <source-file src="src/ios/Bridge.m"/>
         <source-file src="src/ios/Bridge.h"/>
     </platform>
+
+
+    <platform name="browser">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Bridge">
+                <param name="browser-package" value="Bridge" />
+            </feature>
+        </config-file>
+
+        <js-module src="src/browser/DeviceProxy.js" name="Bridge">
+            <runs />
+        </js-module>
+    </platform>
+
 </plugin>
